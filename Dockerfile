@@ -36,14 +36,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Remove default configuration from Nginx
 RUN rm /etc/nginx/conf.d/default.conf
 
-# mount point for nginx.conf
-VOLUME /etc/nginx/conf.d/
-
 EXPOSE 80 443
-# finish setting nginx
-
-# mount point for supervisord.conf
-VOLUME /etc/supervisor/conf.d/
+# ========================finish setting nginx=======================
 
 # Custom Supervisord config
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
